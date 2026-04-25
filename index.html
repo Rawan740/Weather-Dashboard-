@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn">Search</button>
+            <div id="error-banner" class="hidden"></div>
+        </header>
+
+        <section id="current-weather" class="card">
+            <h2 id="city-display" class="skeleton-text"></h2>
+            <div class="temp-main skeleton-text"></div>
+            <p id="weather-desc" class="skeleton-text"></p>
+            <div class="details">
+                <span id="humidity"></span>
+                <span id="wind"></span>
+                <span id="local-time"></span>
+            </div>
+        </section>
+
+        <div id="forecast-row" class="forecast-container">
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+    <div class="forecast-card skeleton"></div>
+</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

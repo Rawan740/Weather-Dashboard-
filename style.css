@@ -1,0 +1,74 @@
+body {
+    /* This creates the blue-to-green fade */
+    background: linear-gradient(to bottom right, #87CEEB, #90EE90);
+    
+    /* These ensure the background covers the whole screen perfectly */
+    min-height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Add a nice font while we are at it! */
+    font-family: Arial, sans-serif;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 20px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.hidden { display: none; }
+.card, .forecast-card {
+    /* The magic code for see-through white */
+    background-color: rgba(255, 255, 255, 0.4); 
+    
+    /* This adds the 'frosted glass' blur effect behind the card */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari browsers */
+    
+    /* A subtle white border makes the edges pop */
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    
+    /* Keep your existing spacing and corners */
+    padding: 20px; 
+    border-radius: 12px; 
+    
+    /* Optional: Adds a soft shadow behind the cards to make them float */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the text inside remains readable against the new background */
+.card h2, .card p, .forecast-card h3, .forecast-card p {
+    color: #333; 
+}
+
+.forecast-container { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 20px; 
+    overflow-x: auto; /* Adds a scrollbar on small screens */
+}
+
+.forecast-card { 
+    flex: 1; 
+    min-width: 90px; 
+    padding: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    text-align: center; 
+    background-color: white;
+}
+
+/* Make sure the skeleton class has a minimum height for the empty cards */
+.forecast-card.skeleton {
+    height: 120px;
+}
